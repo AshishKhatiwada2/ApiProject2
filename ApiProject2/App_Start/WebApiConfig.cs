@@ -15,6 +15,12 @@ namespace ApiProject2
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+               name: "ProductsApi",
+               routeTemplate: "api/prod/{id}",
+               defaults: new { controller="Products", id = RouteParameter.Optional }
+           );
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
