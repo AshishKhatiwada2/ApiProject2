@@ -7,34 +7,42 @@ using System.Web.Http;
 
 namespace ApiProject2.Controllers
 {
+    [RoutePrefix("api/products")]
+
     public class ProductsController : ApiController
     {
         // GET: api/Products
-        public IEnumerable<string> Get()
+        [HttpGet, Route("")]
+        public IEnumerable<string> SelectAllProducts()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "product1 ", "product2" };
         }
 
         // GET: api/Products/5
-        public string Get(int id)
+        [HttpGet,Route("{id}/orders/{custid}")]
+        public string Get(int id,string custid)
         {
-            return "value";
+            return "product id = "+id+"custid = "+custid ;
         }
 
         // POST: api/Products
-        [HttpPost]
+        [HttpPost,Route("{id}")]
         public void CreateProduct([FromBody]string value)
         {
         }
 
         // PUT: api/Products/5
-        public void Put(int id, [FromBody]string value)
+        [HttpPut,Route("{id}")]
+        public string Put(int id, [FromBody]string value)
         {
+            return "returned current person id =" + id + " " + value;
         }
 
         // DELETE: api/Products/5
-        public void Delete(int id)
+        [HttpDelete,Route("{id}")]
+        public string Delete(int id)
         {
+            return "deleted value id= " + id;
         }
     }
 }
