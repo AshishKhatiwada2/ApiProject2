@@ -30,6 +30,7 @@ namespace ApiProject2.Controllers
         }
         // GET: api/Products
         [HttpGet, Route("")]
+        [AcceptVerbs("GET")]
         public IEnumerable<string> SelectAllProducts()
         {
             return new string[] { "product1 ", "product2" };
