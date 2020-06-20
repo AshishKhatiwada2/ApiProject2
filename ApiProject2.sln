@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiProject2", "ApiProject2\ApiProject2.csproj", "{B3123AE4-0020-4F1C-9C38-8715C93799A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumTest", "EnumTest\EnumTest.csproj", "{79E0345F-D750-4B51-88D6-9056BB0B85D1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B3123AE4-0020-4F1C-9C38-8715C93799A1} = {B3123AE4-0020-4F1C-9C38-8715C93799A1}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
